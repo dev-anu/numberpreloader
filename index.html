@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Preloader</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="counter">
+            0
+        </div>
+    </div>
+    <section>
+        <h2>Welcome back to all<span>Stay Tuned for More Videos... </span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates quisquam iusto similique eos reprehenderit sapiente soluta, tempore quasi a officiis vero cumque dignissimos consectetur quod aliquid reiciendis ea maxime laboriosam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, ducimus aperiam sit sunt excepturi quo numquam modi sequi. Molestias tempore quidem alias, hic facilis odit. Dolores magnam sequi et eius.</p>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        function counter(){
+            var count = setInterval(function(){
+                var c =parseInt($('.counter').text());
+                $('.counter').text((++c).toString());
+                if(c==100){
+                    clearInterval(count);
+                    $('.counter').addClass('hide');
+                    $('.preloader').addClass('active');
+                }
+            },60)
+        }
+        counter();
+    </script>
+</body>
+</html>
